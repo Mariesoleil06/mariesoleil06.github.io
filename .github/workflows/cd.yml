@@ -48,13 +48,13 @@ jobs:
             --exclude=index.php \
             .
         env:
-        INPUT_PATH: public
+          INPUT_PATH: public
 
       - name: Upload artifact
-      uses: actions/upload-artifact@main
-      with:
-        name: github-pages
-        path: ${{ runner.temp }}/artifact.tar
+        uses: actions/upload-artifact@main
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/artifact.tar
 
   deploy:
     name: TDB
