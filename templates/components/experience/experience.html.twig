@@ -26,14 +26,15 @@
 {% block body %}
 
         {% set experiences = [
-            {'headline': '',
-            'content': '',
-            'link': '',
-            'linkText': 'T',
-            'img': ''},
+            {'headline': 'Praktikum - Webdesign',
+            'content': '2032 absolviere ich in der Firma HDNET mein 3-wöchiges Praktikum im Bereich Webdesign das ich hoffentlich mit einem positiven Feedback abschließen werde.',
+            'link': 'www.hdnet.de',
+            'linkText': 'Zur Website von HDNET',
+            'img': 'img/code.png'},
 
         ] %}
     <section id="experience" class="experience">
+        <h2 class="text-uppercase">Erfahrungen</h2>
         <div class="experience-element">
             {% for item in experiences %}
                 {% include 'components/experience/experience-content.html.twig' %}

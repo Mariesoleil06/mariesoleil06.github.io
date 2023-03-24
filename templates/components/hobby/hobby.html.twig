@@ -1,36 +1,46 @@
 {% block style %}
     <style>
         .hobby {
-
+            background-color: rgb(var(--color-primary-darker));
+            padding: 80px;
         }
 
         .hobby-element{
-
+            max-width: 1024px;
+            display: grid;
+            grid-template-columns: 60% auto;
+            grid-gap: 32px;
         }
         .hobby-cards{
-
+            display: grid;
+            grid-gap: 32px;
+            width: 100%;
+            grid-template-columns: repeat(2, 50%);
         }
 
         .hobby-text {
-
+            width: auto;
+            padding: 0 32px;
         }
 
         @media screen and (max-width: 1020px) {
             .hobby-element {
-
+                display: flex;
+                flex-direction: column;
             }
         }
 
         @media screen and (max-width: 650px){
             .hobby {
-
+                min-height: max-content !important;
+                padding: 16px;
             }
             .hobby-cards {
-
+                grid-template-columns: repeat(1, 100%);
             }
 
             .hobby-text {
-
+                padding: 0 16px;
             }
         }
     </style>
@@ -38,10 +48,21 @@
 
 {% block body %}
     {% set hobbies = [
-        {'headline': '',
-        'content': '',
-        'icon': ''},
+        {'headline': 'Freizeit',
+            'content': 'In meiner Freizeit verbringe ich gerne Zeit in der Natur, fahre Fahrrad oder treffe ich mich mit Freunden.',
+            'icon': 'img/happy.png'},
 
+        {'headline': 'Fotografie',
+            'content': 'Während ich unterwegs bin schieße ich gerne mit meinen Handy Fotos vom Sonnenuntergang oder von weiteren schönen Erlebnissen im Leben.',
+            'icon': 'img/camera(1).png'},
+
+        {'headline': 'Mode',
+            'content': 'Ich drücke mich gerne mit meinem Kleidungsstyle aus.',
+            'icon': 'img/shopping-cart.png'},
+        
+        {'headline': 'Programieren',
+            'content': 'In der Schule, sowie auch in meiner Freizeit, bereitet mir das Programmieren mit HTML, CSS, JavaScript und TigerJython viel Freude.',
+            'icon': 'img/server.png'},
     ] %}
 
     <section id="hobby" class="hobby">
@@ -50,6 +71,11 @@
                 {% for item in hobbies %}
                     {% include 'components/card.html.twig' with item %}
                 {% endfor %}
+            </span>
+            <span class="hobby-text">
+                <h2> Vorstellung meiner Person</h2>
+                <p class"light color-primary-normal">Mein Name ist Marie-Soleil Strauch. Ich bin 14 Jahre alt und besuche derzeit die Realschule Gertrud-Bäumer-Schule in Bielefeld. Meine Interessen liegen im Kreativen Bereich. Ich höre gerne Musik und schreibe gerne mit Freunden. In der Schule belege ich die Grundkurse Mathe, Deutsch und Englisch und als Wahlpflichtfach seit der 7 Klasse Informatik. Hierbei bringt mir in Informatik das Programmieren viel Freude, daher beschäftige ich mich hiermit auch in meiner Freizeit.
+                </p>
             </span>
         </div>
     </section>
